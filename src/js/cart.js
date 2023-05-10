@@ -6,7 +6,6 @@ function renderCartContents() {
     let storageItem = JSON.parse(localStorage.getItem("so-cart"));
     cartItems.push(storageItem);
   }
-  console.log(cartItems);
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 }
@@ -26,7 +25,7 @@ function cartItemTemplate(item) {
   <p class="cart-card__quantity">qty: 1</p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
-  console.log(newItem);
+
   return newItem;
 }
 
