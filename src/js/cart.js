@@ -1,14 +1,12 @@
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage } from './utils.mjs';
 
 function renderCartContents() {
-  const cartItems = [];
-  for (let i = 1, len = localStorage.length; i < len; ++i) {
-    let storageItem = JSON.parse(localStorage.getItem("so-cart"));
-    cartItems.push(storageItem);
-  }
+  const cartItems = getLocalStorage('so-cart');
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  document.querySelector('.product-list').innerHTML = htmlItems.join('');
+  
 }
+
 
 function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
