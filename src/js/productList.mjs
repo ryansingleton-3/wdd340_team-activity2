@@ -23,5 +23,6 @@ export default async function productList(selector, category) {
     console.log(products);
 
     renderListTemplate(productCardTemplate, el, products)
+    document.querySelector('.title').innerHTML = category;
 
 }
